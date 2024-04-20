@@ -1,0 +1,524 @@
+{
+  "address": "0xD355A00220FbA16b69Cd8C4fbE16E02CA855f928",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "timelock_address_store_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "releaseToken_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "votingPeriod_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "votingDelay_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proposalThreshold_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oldAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "NewAdmin",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oldImplementation",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "NewImplementation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oldPendingAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newPendingAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "NewPendingAdmin",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProposalCanceled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "targets",
+          "type": "address[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "signatures",
+          "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes[]",
+          "name": "calldatas",
+          "type": "bytes[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "startBlock",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "endBlock",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        }
+      ],
+      "name": "ProposalCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProposalExecuted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "eta",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProposalQueued",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldProposalThreshold",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newProposalThreshold",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProposalThresholdSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "voter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "proposalId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "support",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "votes",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "reason",
+          "type": "string"
+        }
+      ],
+      "name": "VoteCast",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldVotingDelay",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newVotingDelay",
+          "type": "uint256"
+        }
+      ],
+      "name": "VotingDelaySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldVotingPeriod",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newVotingPeriod",
+          "type": "uint256"
+        }
+      ],
+      "name": "VotingPeriodSet",
+      "type": "event"
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        }
+      ],
+      "name": "_setImplementation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pendingAdmin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb24101132cefa8b5dbcc574244c6bf9b369301a5487359ab366b6e7c523c913c",
+  "receipt": {
+    "to": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "from": "0x2c2bc76B97BCe84A5a9c6e2835AB13306B964cf1",
+    "contractAddress": null,
+    "transactionIndex": 6,
+    "gasUsed": "537988",
+    "logsBloom": "0x00000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000004000000000000000000080000000080000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xacdcccb1b2d05f77a745ecc856a8a3e366135073f2fd538e0ebe1f582c218f77",
+    "transactionHash": "0xb24101132cefa8b5dbcc574244c6bf9b369301a5487359ab366b6e7c523c913c",
+    "logs": [
+      {
+        "transactionIndex": 6,
+        "blockNumber": 24568399,
+        "transactionHash": "0xb24101132cefa8b5dbcc574244c6bf9b369301a5487359ab366b6e7c523c913c",
+        "address": "0xD355A00220FbA16b69Cd8C4fbE16E02CA855f928",
+        "topics": [
+          "0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d355a00220fba16b69cd8c4fbe16e02ca855f92800000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000001800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "logIndex": 16,
+        "blockHash": "0xacdcccb1b2d05f77a745ecc856a8a3e366135073f2fd538e0ebe1f582c218f77"
+      },
+      {
+        "transactionIndex": 6,
+        "blockNumber": 24568399,
+        "transactionHash": "0xb24101132cefa8b5dbcc574244c6bf9b369301a5487359ab366b6e7c523c913c",
+        "address": "0xD355A00220FbA16b69Cd8C4fbE16E02CA855f928",
+        "topics": [
+          "0xd604de94d45953f9138079ec1b82d533cb2160c906d1076d1f7ed54befbca97a"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000064822fad7b5b5d90d891415f8368fd3b123dee4c",
+        "logIndex": 17,
+        "blockHash": "0xacdcccb1b2d05f77a745ecc856a8a3e366135073f2fd538e0ebe1f582c218f77"
+      }
+    ],
+    "blockNumber": 24568399,
+    "cumulativeGasUsed": "1292073",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x58a113EEecc50D934b43158E601549becca89Ab5",
+    "0x71e26d0E519D14591b9dE9a0fE9513A398101490",
+    "0x0000000000000000000000000000000000000000",
+    "0x64822fAD7B5B5d90D891415f8368Fd3B123DEe4C",
+    86400,
+    720,
+    "1500000000000000000000000"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "79c68ef25dfa8a62f958c6ed79051faf",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"timelock_address_store_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"releaseToken_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"votingPeriod_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"votingDelay_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"proposalThreshold_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"NewAdmin\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldImplementation\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"NewImplementation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldPendingAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newPendingAdmin\",\"type\":\"address\"}],\"name\":\"NewPendingAdmin\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"ProposalCanceled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"proposer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"targets\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"signatures\",\"type\":\"string[]\"},{\"indexed\":false,\"internalType\":\"bytes[]\",\"name\":\"calldatas\",\"type\":\"bytes[]\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"startBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"endBlock\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"name\":\"ProposalCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"ProposalExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"eta\",\"type\":\"uint256\"}],\"name\":\"ProposalQueued\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldProposalThreshold\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newProposalThreshold\",\"type\":\"uint256\"}],\"name\":\"ProposalThresholdSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"support\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"votes\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"VoteCast\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldVotingDelay\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newVotingDelay\",\"type\":\"uint256\"}],\"name\":\"VotingDelaySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldVotingPeriod\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newVotingPeriod\",\"type\":\"uint256\"}],\"name\":\"VotingPeriodSet\",\"type\":\"event\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"}],\"name\":\"_setImplementation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"VoteCast(address,uint256,uint8,uint256,string)\":{\"params\":{\"proposalId\":\"The proposal id which was voted on\",\"reason\":\"The reason given for the vote by the voter\",\"support\":\"Support value for the vote. 0=against, 1=for, 2=abstain\",\"voter\":\"The address which casted a vote\",\"votes\":\"Number of votes which were cast by the voter\"}}},\"kind\":\"dev\",\"methods\":{\"_setImplementation(address)\":{\"params\":{\"implementation_\":\"The address of the new implementation for delegation\"}}},\"version\":1},\"userdoc\":{\"events\":{\"NewAdmin(address,address)\":{\"notice\":\"Emitted when pendingAdmin is accepted, which means admin is updated\"},\"NewImplementation(address,address)\":{\"notice\":\"Emitted when implementation is changed\"},\"NewPendingAdmin(address,address)\":{\"notice\":\"Emitted when pendingAdmin is changed\"},\"ProposalCanceled(uint256)\":{\"notice\":\"An event emitted when a proposal has been canceled\"},\"ProposalCreated(uint256,address,address[],uint256[],string[],bytes[],uint256,uint256,string)\":{\"notice\":\"An event emitted when a new proposal is created\"},\"ProposalExecuted(uint256)\":{\"notice\":\"An event emitted when a proposal has been executed in the Timelock\"},\"ProposalQueued(uint256,uint256)\":{\"notice\":\"An event emitted when a proposal has been queued in the Timelock\"},\"ProposalThresholdSet(uint256,uint256)\":{\"notice\":\"Emitted when proposal threshold is set\"},\"VoteCast(address,uint256,uint8,uint256,string)\":{\"notice\":\"An event emitted when a vote has been cast on a proposal\"},\"VotingDelaySet(uint256,uint256)\":{\"notice\":\"An event emitted when the voting delay is set\"},\"VotingPeriodSet(uint256,uint256)\":{\"notice\":\"An event emitted when the voting period is set\"}},\"kind\":\"user\",\"methods\":{\"_setImplementation(address)\":{\"notice\":\"Called by the admin to update the implementation of the delegator\"},\"admin()\":{\"notice\":\"Administrator for this contract\"},\"implementation()\":{\"notice\":\"Active brains of Governor\"},\"pendingAdmin()\":{\"notice\":\"Pending administrator for this contract\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/governance/RomulusDelegator.sol\":\"RomulusDelegator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/governance/RomulusDelegator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./RomulusInterfaces.sol\\\";\\n\\ninterface IAddressStore {\\n    function get() view external returns(address);\\n}\\n\\ncontract RomulusDelegator is RomulusDelegatorStorage, RomulusEvents {\\n  constructor(\\n    address timelock_address_store_,\\n    address token_,\\n    address releaseToken_,\\n    address implementation_,\\n    uint votingPeriod_,\\n    uint votingDelay_,\\n    uint proposalThreshold_\\n  ) {\\n    // Admin set to msg.sender for initialization\\n    address timelock_address = IAddressStore(timelock_address_store_).get();\\n    admin = msg.sender;\\n\\n    delegateTo(\\n      implementation_,\\n      abi.encodeWithSignature(\\n        \\\"initialize(address,address,address,uint256,uint256,uint256)\\\",\\n         timelock_address,\\n         token_,\\n         releaseToken_,\\n         votingPeriod_,\\n         votingDelay_,\\n         proposalThreshold_\\n      )\\n    );\\n    _setImplementation(implementation_);\\n    admin = timelock_address;\\n\\t}\\n\\n\\n\\t/**\\n   * @notice Called by the admin to update the implementation of the delegator\\n   * @param implementation_ The address of the new implementation for delegation\\n   */\\n  function _setImplementation(address implementation_) public {\\n    require(msg.sender == admin, \\\"RomulusDelegator::_setImplementation: admin only\\\");\\n    require(implementation_ != address(0), \\\"RomulusDelegator::_setImplementation: invalid implementation address\\\");\\n\\n    address oldImplementation = implementation;\\n    implementation = implementation_;\\n\\n    emit NewImplementation(oldImplementation, implementation);\\n  }\\n\\n  /**\\n   * @notice Internal method to delegate execution to another contract\\n   * @dev It returns to the external caller whatever the implementation returns or forwards reverts\\n   * @param callee The contract to delegatecall\\n   * @param data The raw data to delegatecall\\n   */\\n  function delegateTo(address callee, bytes memory data) internal {\\n    (bool success, bytes memory returnData) = callee.delegatecall(data);\\n    assembly {\\n      if eq(success, 0) {\\n          revert(add(returnData, 0x20), returndatasize())\\n      }\\n    }\\n  }\\n\\n\\t/**\\n   * @dev Delegates execution to an implementation contract.\\n   * It returns to the external caller whatever the implementation returns\\n   * or forwards reverts.\\n   */\\n  fallback () external {\\n    // delegate all other functions to current implementation\\n    (bool success, ) = implementation.delegatecall(msg.data);\\n\\n    assembly {\\n      let free_mem_ptr := mload(0x40)\\n      returndatacopy(free_mem_ptr, 0, returndatasize())\\n\\n      switch success\\n      case 0 { revert(free_mem_ptr, returndatasize()) }\\n      default { return(free_mem_ptr, returndatasize()) }\\n    }\\n  }\\n}\\n\",\"keccak256\":\"0xbe18bb634c31c91d8141e760ab24abb7ef09944a2db55ad8e48ee0972c9a104e\",\"license\":\"MIT\"},\"contracts/governance/RomulusInterfaces.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../interfaces/IHasVotes.sol\\\";\\n\\ncontract RomulusEvents {\\n  /// @notice An event emitted when a new proposal is created\\n  event ProposalCreated(\\n    uint256 id,\\n    address proposer,\\n    address[] targets,\\n    uint256[] values,\\n    string[] signatures,\\n    bytes[] calldatas,\\n    uint256 startBlock,\\n    uint256 endBlock,\\n    string description\\n  );\\n\\n  /// @notice An event emitted when a vote has been cast on a proposal\\n  /// @param voter The address which casted a vote\\n  /// @param proposalId The proposal id which was voted on\\n  /// @param support Support value for the vote. 0=against, 1=for, 2=abstain\\n  /// @param votes Number of votes which were cast by the voter\\n  /// @param reason The reason given for the vote by the voter\\n  event VoteCast(address indexed voter, uint256 proposalId, uint8 support, uint256 votes, string reason);\\n\\n  /// @notice An event emitted when a proposal has been canceled\\n  event ProposalCanceled(uint256 id);\\n\\n  /// @notice An event emitted when a proposal has been queued in the Timelock\\n  event ProposalQueued(uint256 id, uint256 eta);\\n\\n  /// @notice An event emitted when a proposal has been executed in the Timelock\\n  event ProposalExecuted(uint256 id);\\n\\n  /// @notice An event emitted when the voting delay is set\\n  event VotingDelaySet(uint256 oldVotingDelay, uint256 newVotingDelay);\\n\\n  /// @notice An event emitted when the voting period is set\\n  event VotingPeriodSet(uint256 oldVotingPeriod, uint256 newVotingPeriod);\\n\\n  /// @notice Emitted when implementation is changed\\n  event NewImplementation(address oldImplementation, address newImplementation);\\n\\n  /// @notice Emitted when proposal threshold is set\\n  event ProposalThresholdSet(uint256 oldProposalThreshold, uint256 newProposalThreshold);\\n\\n  /// @notice Emitted when pendingAdmin is changed\\n  event NewPendingAdmin(address oldPendingAdmin, address newPendingAdmin);\\n\\n  /// @notice Emitted when pendingAdmin is accepted, which means admin is updated\\n  event NewAdmin(address oldAdmin, address newAdmin);\\n}\\n\\ncontract RomulusDelegatorStorage {\\n  /// @notice Administrator for this contract\\n  address public admin;\\n\\n  /// @notice Pending administrator for this contract\\n  address public pendingAdmin;\\n\\n  /// @notice Active brains of Governor\\n  address public implementation;\\n}\\n\\n/**\\n * @title Storage for Governor Bravo Delegate\\n * @notice For future upgrades, do not change RomulusDelegateStorageV1. Create a new\\n * contract which implements RomulusDelegateStorageV1 and following the naming convention\\n * RomulusDelegateStorageVX.\\n */\\ncontract RomulusDelegateStorageV1 is RomulusDelegatorStorage {\\n  /// @notice The delay before voting on a proposal may take place, once proposed, in blocks\\n  uint256 public votingDelay;\\n\\n  /// @notice The duration of voting on a proposal, in blocks\\n  uint256 public votingPeriod;\\n\\n  /// @notice The number of votes required in order for a voter to become a proposer\\n  uint256 public proposalThreshold;\\n\\n  /// @notice The total number of proposals\\n  uint256 public proposalCount;\\n\\n  /// @notice The address of the Governance Timelock\\n  TimelockInterface public timelock;\\n\\n  /// @notice The address of the governance token\\n  IHasVotes public token;\\n\\n  /// @notice The address of the \\\"Release\\\" governance token\\n  IHasVotes public releaseToken;\\n\\n  /// @notice The official record of all proposals ever proposed\\n  mapping(uint256 => Proposal) public proposals;\\n  /// @notice The official each proposal's targets:\\n  /// An ordered list of target addresses for calls to be made\\n  mapping(uint256 => address[]) public proposalTargets;\\n  /// @notice The official each proposal's values:\\n  /// An ordered list of values (i.e. msg.value) to be passed to the calls to be made\\n  mapping(uint256 => uint256[]) public proposalValues;\\n  /// @notice The official each proposal's signatures:\\n  /// An ordered list of function signatures to be called\\n  mapping(uint256 => string[]) public proposalSignatures;\\n  /// @notice The official each proposal's calldatas:\\n  /// An ordered list of calldata to be passed to each call\\n  mapping(uint256 => bytes[]) public proposalCalldatas;\\n  /// @notice The official each proposal's receipts:\\n  /// Receipts of ballots for the entire set of voters\\n  mapping(uint256 => mapping(address => Receipt)) public proposalReceipts;\\n\\n  /// @notice The latest proposal for each proposer\\n  mapping(address => uint256) public latestProposalIds;\\n\\n  struct Proposal {\\n    // Unique id for looking up a proposal\\n    uint256 id;\\n    // Creator of the proposal\\n    address proposer;\\n    // The timestamp that the proposal will be available for execution, set once the vote succeeds\\n    uint256 eta;\\n    // The block at which voting begins: holders must delegate their votes prior to this block\\n    uint256 startBlock;\\n    // The block at which voting ends: votes must be cast prior to this block\\n    uint256 endBlock;\\n    // Current number of votes in favor of this proposal\\n    uint256 forVotes;\\n    // Current number of votes in opposition to this proposal\\n    uint256 againstVotes;\\n    // Current number of votes for abstaining for this proposal\\n    uint256 abstainVotes;\\n    // Flag marking whether the proposal has been canceled\\n    bool canceled;\\n    // Flag marking whether the proposal has been executed\\n    bool executed;\\n  }\\n\\n  /// @notice Ballot receipt record for a voter\\n  struct Receipt {\\n    // Whether or not a vote has been cast\\n    bool hasVoted;\\n    // Whether or not the voter supports the proposal or abstains\\n    uint8 support;\\n    // The number of votes the voter had, which were cast\\n    uint96 votes;\\n  }\\n\\n  /// @notice Possible states that a proposal may be in\\n  enum ProposalState { Pending, Active, Canceled, Defeated, Succeeded, Queued, Expired, Executed }\\n}\\n\\ninterface TimelockInterface {\\n  function admin() external view returns (address);\\n\\n  function delay() external view returns (uint256);\\n\\n  function GRACE_PERIOD() external view returns (uint256);\\n\\n  function acceptAdmin() external;\\n\\n  function queuedTransactions(bytes32 hash) external view returns (bool);\\n\\n  function queueTransaction(\\n    address target,\\n    uint256 value,\\n    string calldata signature,\\n    bytes calldata data,\\n    uint256 eta\\n  ) external returns (bytes32);\\n\\n  function cancelTransaction(\\n    address target,\\n    uint256 value,\\n    string calldata signature,\\n    bytes calldata data,\\n    uint256 eta\\n  ) external;\\n\\n  function executeTransaction(\\n    address target,\\n    uint256 value,\\n    string calldata signature,\\n    bytes calldata data,\\n    uint256 eta\\n  ) external payable returns (bytes memory);\\n}\\n\",\"keccak256\":\"0xc876b044ea0b0b101b2780b984257519970a280622d35320d9e75a3e3a6a5fea\",\"license\":\"MIT\"},\"contracts/interfaces/IHasVotes.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.3;\\n\\n/**\\n * Reads the votes that an account has.\\n */\\ninterface IHasVotes {\\n    /**\\n     * @notice Gets the current votes balance for `account`\\n     * @param account The address to get votes balance\\n     * @return The number of current votes for `account`\\n     */\\n    function getCurrentVotes(address account) external view returns (uint96);\\n\\n    /**\\n     * @notice Determine the prior number of votes for an account as of a block number\\n     * @dev Block number must be a finalized block or else this function will revert to prevent misinformation.\\n     * @param account The address of the account to check\\n     * @param blockNumber The block number to get the vote balance at\\n     * @return The number of votes the account had as of the given block\\n     */\\n    function getPriorVotes(address account, uint256 blockNumber)\\n        external\\n        view\\n        returns (uint96);\\n}\\n\",\"keccak256\":\"0x5ef48a77f18f580eab395335e8ec85ec9ad49ec7ce813515bd4aa73dfe0e8bf8\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161071a38038061071a83398101604081905261002f9161031f565b6000876001600160a01b0316636d4ce63c6040518163ffffffff1660e01b8152600401602060405180830381865afa15801561006f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906100939190610390565b600080546001600160a01b031916331790556040516001600160a01b0382811660248301528981166044830152881660648201526084810186905260a4810185905260c4810184905290915061011b90869060e40160408051601f198184030181529190526020810180516001600160e01b039081166339466de560e11b1790915261015116565b610124856101c4565b600080546001600160a01b0319166001600160a01b0392909216919091179055506103e195505050505050565b600080836001600160a01b03168360405161016c91906103b2565b600060405180830381855af49150503d80600081146101a7576040519150601f19603f3d011682016040523d82523d6000602084013e6101ac565b606091505b509092509050816101be573d60208201fd5b50505050565b6000546001600160a01b0316331461022a5760405162461bcd60e51b815260206004820152603060248201526000805160206106fa83398151915260448201526f74696f6e3a2061646d696e206f6e6c7960801b60648201526084015b60405180910390fd5b6001600160a01b0381166102a25760405162461bcd60e51b8152602060048201526044602482018190526000805160206106fa833981519152908201527f74696f6e3a20696e76616c696420696d706c656d656e746174696f6e206164646064820152637265737360e01b608482015260a401610221565b600280546001600160a01b038381166001600160a01b031983168117909355604080519190921680825260208201939093527fd604de94d45953f9138079ec1b82d533cb2160c906d1076d1f7ed54befbca97a910160405180910390a15050565b80516001600160a01b038116811461031a57600080fd5b919050565b600080600080600080600060e0888a03121561033a57600080fd5b61034388610303565b965061035160208901610303565b955061035f60408901610303565b945061036d60608901610303565b93506080880151925060a0880151915060c0880151905092959891949750929550565b6000602082840312156103a257600080fd5b6103ab82610303565b9392505050565b6000825160005b818110156103d357602081860181015185830152016103b9565b506000920191825250919050565b61030a806103f06000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806326782247146100c95780635c60da1b146100f8578063bb913f411461010b578063f851a4401461011e575b6002546040516000916001600160a01b03169061006c9083903690610294565b600060405180830381855af49150503d80600081146100a7576040519150601f19603f3d011682016040523d82523d6000602084013e6100ac565b606091505b505090506040513d6000823e8180156100c3573d82f35b3d82fd5b005b6001546100dc906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b6002546100dc906001600160a01b031681565b6100c76101193660046102a4565b610131565b6000546100dc906001600160a01b031681565b6000546001600160a01b031633146101a95760405162461bcd60e51b815260206004820152603060248201527f526f6d756c757344656c656761746f723a3a5f736574496d706c656d656e746160448201526f74696f6e3a2061646d696e206f6e6c7960801b60648201526084015b60405180910390fd5b6001600160a01b0381166102335760405162461bcd60e51b8152602060048201526044602482018190527f526f6d756c757344656c656761746f723a3a5f736574496d706c656d656e7461908201527f74696f6e3a20696e76616c696420696d706c656d656e746174696f6e206164646064820152637265737360e01b608482015260a4016101a0565b600280546001600160a01b038381166001600160a01b031983168117909355604080519190921680825260208201939093527fd604de94d45953f9138079ec1b82d533cb2160c906d1076d1f7ed54befbca97a910160405180910390a15050565b8183823760009101908152919050565b6000602082840312156102b657600080fd5b81356001600160a01b03811681146102cd57600080fd5b939250505056fea26469706673582212205a59db7baf4941a84615b58eb92f9ced483e536e382e728341f44cb3f3c70af464736f6c63430008170033526f6d756c757344656c656761746f723a3a5f736574496d706c656d656e7461",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806326782247146100c95780635c60da1b146100f8578063bb913f411461010b578063f851a4401461011e575b6002546040516000916001600160a01b03169061006c9083903690610294565b600060405180830381855af49150503d80600081146100a7576040519150601f19603f3d011682016040523d82523d6000602084013e6100ac565b606091505b505090506040513d6000823e8180156100c3573d82f35b3d82fd5b005b6001546100dc906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b6002546100dc906001600160a01b031681565b6100c76101193660046102a4565b610131565b6000546100dc906001600160a01b031681565b6000546001600160a01b031633146101a95760405162461bcd60e51b815260206004820152603060248201527f526f6d756c757344656c656761746f723a3a5f736574496d706c656d656e746160448201526f74696f6e3a2061646d696e206f6e6c7960801b60648201526084015b60405180910390fd5b6001600160a01b0381166102335760405162461bcd60e51b8152602060048201526044602482018190527f526f6d756c757344656c656761746f723a3a5f736574496d706c656d656e7461908201527f74696f6e3a20696e76616c696420696d706c656d656e746174696f6e206164646064820152637265737360e01b608482015260a4016101a0565b600280546001600160a01b038381166001600160a01b031983168117909355604080519190921680825260208201939093527fd604de94d45953f9138079ec1b82d533cb2160c906d1076d1f7ed54befbca97a910160405180910390a15050565b8183823760009101908152919050565b6000602082840312156102b657600080fd5b81356001600160a01b03811681146102cd57600080fd5b939250505056fea26469706673582212205a59db7baf4941a84615b58eb92f9ced483e536e382e728341f44cb3f3c70af464736f6c63430008170033",
+  "devdoc": {
+    "events": {
+      "VoteCast(address,uint256,uint8,uint256,string)": {
+        "params": {
+          "proposalId": "The proposal id which was voted on",
+          "reason": "The reason given for the vote by the voter",
+          "support": "Support value for the vote. 0=against, 1=for, 2=abstain",
+          "voter": "The address which casted a vote",
+          "votes": "Number of votes which were cast by the voter"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "_setImplementation(address)": {
+        "params": {
+          "implementation_": "The address of the new implementation for delegation"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "NewAdmin(address,address)": {
+        "notice": "Emitted when pendingAdmin is accepted, which means admin is updated"
+      },
+      "NewImplementation(address,address)": {
+        "notice": "Emitted when implementation is changed"
+      },
+      "NewPendingAdmin(address,address)": {
+        "notice": "Emitted when pendingAdmin is changed"
+      },
+      "ProposalCanceled(uint256)": {
+        "notice": "An event emitted when a proposal has been canceled"
+      },
+      "ProposalCreated(uint256,address,address[],uint256[],string[],bytes[],uint256,uint256,string)": {
+        "notice": "An event emitted when a new proposal is created"
+      },
+      "ProposalExecuted(uint256)": {
+        "notice": "An event emitted when a proposal has been executed in the Timelock"
+      },
+      "ProposalQueued(uint256,uint256)": {
+        "notice": "An event emitted when a proposal has been queued in the Timelock"
+      },
+      "ProposalThresholdSet(uint256,uint256)": {
+        "notice": "Emitted when proposal threshold is set"
+      },
+      "VoteCast(address,uint256,uint8,uint256,string)": {
+        "notice": "An event emitted when a vote has been cast on a proposal"
+      },
+      "VotingDelaySet(uint256,uint256)": {
+        "notice": "An event emitted when the voting delay is set"
+      },
+      "VotingPeriodSet(uint256,uint256)": {
+        "notice": "An event emitted when the voting period is set"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "_setImplementation(address)": {
+        "notice": "Called by the admin to update the implementation of the delegator"
+      },
+      "admin()": {
+        "notice": "Administrator for this contract"
+      },
+      "implementation()": {
+        "notice": "Active brains of Governor"
+      },
+      "pendingAdmin()": {
+        "notice": "Pending administrator for this contract"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4729,
+        "contract": "contracts/governance/RomulusDelegator.sol:RomulusDelegator",
+        "label": "admin",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 4732,
+        "contract": "contracts/governance/RomulusDelegator.sol:RomulusDelegator",
+        "label": "pendingAdmin",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 4735,
+        "contract": "contracts/governance/RomulusDelegator.sol:RomulusDelegator",
+        "label": "implementation",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

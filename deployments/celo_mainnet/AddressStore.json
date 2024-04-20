@@ -1,0 +1,100 @@
+{
+  "address": "0x58a113EEecc50D934b43158E601549becca89Ab5",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_value",
+          "type": "address"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x157f1b62ce5b69d013c9b1344e22f28ff99b52825d429b9b04ba9e0ff8f4e0ee",
+  "receipt": {
+    "to": null,
+    "from": "0x2c2bc76B97BCe84A5a9c6e2835AB13306B964cf1",
+    "contractAddress": "0x58a113EEecc50D934b43158E601549becca89Ab5",
+    "transactionIndex": 3,
+    "gasUsed": "130668",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x78e5525eb880dc25db6e2392e2990c83750d3449c408e9abb8cdeb08bc727637",
+    "transactionHash": "0x157f1b62ce5b69d013c9b1344e22f28ff99b52825d429b9b04ba9e0ff8f4e0ee",
+    "logs": [],
+    "blockNumber": 24568366,
+    "cumulativeGasUsed": "467914",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "79c68ef25dfa8a62f958c6ed79051faf",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_value\",\"type\":\"address\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/utility/AddressStore.sol\":\"AddressStore\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/utility/AddressStore.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ncontract AddressStore {\\n    address public immutable owner;\\n    address private value;\\n\\n    constructor() {\\n        owner = msg.sender;\\n    }\\n\\n    function set(address _value) external {\\n        require(msg.sender == owner);\\n        value = _value;\\n    }\\n\\n    function get() view external returns(address) {\\n        return value;\\n    }\\n}\\n\",\"keccak256\":\"0xee3eee077f96b4f0f48cf1091465c68fdfa5d03687f96aefd6859e5595ab463c\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b5033608052608051610168610035600039600081816089015260b601526101686000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632801617e146100465780636d4ce63c1461005b5780638da5cb5b14610084575b600080fd5b610059610054366004610102565b6100ab565b005b6000546001600160a01b03165b6040516001600160a01b03909116815260200160405180910390f35b6100687f000000000000000000000000000000000000000000000000000000000000000081565b336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146100e057600080fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b60006020828403121561011457600080fd5b81356001600160a01b038116811461012b57600080fd5b939250505056fea2646970667358221220d939d0ff5cdbaeaacbcc1a32da58b8890d03f6a8013e554876215377216338ae64736f6c63430008170033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80632801617e146100465780636d4ce63c1461005b5780638da5cb5b14610084575b600080fd5b610059610054366004610102565b6100ab565b005b6000546001600160a01b03165b6040516001600160a01b03909116815260200160405180910390f35b6100687f000000000000000000000000000000000000000000000000000000000000000081565b336001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016146100e057600080fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b60006020828403121561011457600080fd5b81356001600160a01b038116811461012b57600080fd5b939250505056fea2646970667358221220d939d0ff5cdbaeaacbcc1a32da58b8890d03f6a8013e554876215377216338ae64736f6c63430008170033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 6768,
+        "contract": "contracts/utility/AddressStore.sol:AddressStore",
+        "label": "value",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
